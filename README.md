@@ -1,5 +1,5 @@
 ## My Web Application (Title)
-
+Photo page: Izzy
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
