@@ -7,6 +7,7 @@
 
 ## Team Member
 Charm Julia C. Batilo
+Sun Woo Park
 
 ## General Info
 This browser based web application to ...
