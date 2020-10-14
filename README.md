@@ -1,17 +1,13 @@
-<<<<<<< HEAD
-## My Web Application (Title)
-Photo page: Izzy
-=======
 ## Virtual Tour 
 
 * [Team Member](#author-name)
->>>>>>> c118bf1a4f441eb74d4c58a898b98a78cfeb24e1
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## Team Member
 Charm Julia C. Batilo
+Izzy Sato
 
 ## General Info
 This browser based web application to ...
@@ -30,6 +26,7 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── favourites_page.html     # Favourites Page file
+├── photo.html               # photo Page file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
 
