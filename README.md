@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-## My Web Application (Title)
-Photo page: Izzy
-=======
 ## Virtual Tour 
 
 * [Team Member](#author-name)
->>>>>>> c118bf1a4f441eb74d4c58a898b98a78cfeb24e1
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
