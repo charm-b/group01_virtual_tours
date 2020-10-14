@@ -7,7 +7,11 @@
 
 ## Team Member
 Charm Julia C. Batilo
+<<<<<<< HEAD
 Izzy Sato
+=======
+Sun Woo Park
+>>>>>>> 36222095dd523172a639c9a9e5dd5cbab1454f55
 
 ## General Info
 This browser based web application to ...
