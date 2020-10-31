@@ -1,0 +1,64 @@
+body{
+  font-size: 15px;
+}
+/* Sign in page*/
+#signupTitle{
+  margin-top: 5%;
+  margin-left: 10%;
+}
+#signupForm{
+  padding: 2% 10%;
+}
+/* Photo page */
+#photoTitle{
+  text-align: center;
+  margin-top: 5%;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+.mainContainer{
+  display: grid;
+  grid-template-columns: 30% 30% auto;
+  justify-content: center;
+  margin-top: 5%;
+}
+.viewImage{
+  width: 300px;
+  height: 300px;
+}
+.photoSubContainer{
+  background-color: #C4C2C2;
+  width: 300px;
+  height: 340px;
+}
+.photoIconSection{
+  padding-top: 1%;
+  padding-left: 1%;
+}
+@media only screen and (max-width: 1000px){
+  .viewImage{
+    width: 270px;
+    height: 270px;
+  }
+  .photoSubContainer{
+    width: 270px;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 950px){
+  .mainContainer{
+    display: block;
+  }
+  .photoSubContainer{
+    margin: 0 auto;
+    margin-bottom: 10%;
+  }
+  .viewImage{
+    width: 400px;
+    height: 400px;
+  }
+  .photoSubContainer{
+    width: 400px;
+    height: 450px;
+  }
+}
