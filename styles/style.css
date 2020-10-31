@@ -1,6 +1,12 @@
 body{
   font-size: 15px;
 }
+
+/* Index page */
+.image-parent {
+  margin-right: 1%;
+}
+
 /* Sign in page*/
 #signupTitle{
   margin-top: 5%;
