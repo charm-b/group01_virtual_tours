@@ -7,6 +7,7 @@
 
 ## Team Member
 Charm Julia C. Batilo
+Izzy Sato
 Sun Woo Park
 
 ## General Info
@@ -26,6 +27,7 @@ Content of the project folder:
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── favourites_page.html     # Favourites Page file
+├── photo.html               # photo Page file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
 
