@@ -1,0 +1,36 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.2fr 0.6fr 0.3fr 0.3fr 0.5fr;
+    padding: 0em;
+    margin: 0em;
+    grid-gap: 0em;
+}
+.figure-img{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+}
+.figure{
+    width: 8em;
+}
+h3{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: center;
+}
+.inputs{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    text-align: center;
+}
+.form-check{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    text-align: center;
+}
+.log-button{
+    grid-column: 2/3;
+    grid-row: 6/7;
+    text-align: center;
+}
