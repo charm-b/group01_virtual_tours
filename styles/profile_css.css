@@ -2,7 +2,7 @@
     margin: 0em;
     padding: 2em;
     display: grid;
-    grid-template-columns: 3fr 2fr 1fr 1fr 4fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 4fr;
     grid-template-rows: 0.3fr 0.3fr 0.3fr 1fr 1fr;
 }
 .profilePic{
