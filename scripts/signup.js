@@ -1,4 +1,5 @@
 createUserObj = async (userId, email) => {
+    console.log(userId, email);
     try {
         firebase.firestore().collection("users").doc(userId).set({
             name: 'Enter Name',
@@ -8,7 +9,7 @@ createUserObj = async (userId, email) => {
     } catch ({
         message
     }) {
-        alert(message);
+        alert("line 11" + message);
     }
 };
 
@@ -23,11 +24,11 @@ signup = async () => {
         await firebase
             .auth()
             .createUserWithEmailAndPassword(email, pass)
-            .then(userObj => createUserObj(userObj.user, email))
-            .catch(error => alert(error));
-        window.location.href = "index.html";
+            .then(userObj => createUserObj(userObj.user.uid, email))
+            .catch(error => alert("line 27" + error));
+            window.location.href = "index.html";
     } catch (error) {
-        alert(error);
+        alert("line 30" + error);
     }
  
 };
