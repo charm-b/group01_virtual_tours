@@ -1,7 +1,4 @@
 const getDateFromTimeStamp = ({ seconds }) => new Date(seconds);
-const commentTemplate = ({ uid, comment, timestamp = '' }) => `
-  <p id="${uid}" class="comment">${comment}</p>
-  <p class="timestamp">${getDateFromTimeStamp(timestamp)}</p>`;
 
 const getDocWithId = (docs) => {
   const data = docs.map(doc => {
@@ -24,14 +21,6 @@ const loadComments = (photoID) => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-const loadCommentUI = (photoID) => {
-  loadComments(photoID)
-    .then(data => {
-      document.querySelector(`#${photoID} .comments`).innerHTML = data.map(doc => commentTemplate(doc))
-      .join('');      
-    })
-}
-
 const getPhotoData = () => new Promise((resolve, reject) => {
     db.collection("photo")
     .get()
@@ -42,6 +31,12 @@ const getPhotoData = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
   });
 
+  
+
+  const commentTemplate = ({ uid, comment, timestamp = '' }) => `
+  <p id="${uid}" class="comment">${comment}</p>
+  <p class="timestamp">${getDateFromTimeStamp(timestamp)}</p>`;
+
   const photoTemplate = ({ imageUrl, id }) => `
   <div id="${id}" class="dbImage">
     <img  src="${imageUrl}" />
@@ -49,6 +44,15 @@ const getPhotoData = () => new Promise((resolve, reject) => {
     </div>
   </div>
   `;
+
+
+  const loadCommentUI = (photoID) => {
+    loadComments(photoID)
+      .then(data => {
+        document.querySelector(`#${photoID} .comments`).innerHTML = data.map(doc => commentTemplate(doc))
+        .join('');      
+      })
+  }
 
 const loadUIPhoto = (dataMethod = getPhotoData) => {
   dataMethod()
