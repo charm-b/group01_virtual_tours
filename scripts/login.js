@@ -5,7 +5,7 @@ login = async () => {
     var pass = document.getElementById("password").value;
     try {
         await firebase.auth().signInWithEmailAndPassword(email, pass);
-        window.location.href = "index.html";
+        window.location.href = "profile.html";
     } catch (error) {
         alert(error);
     }

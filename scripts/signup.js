@@ -1,11 +1,13 @@
-createUserObj = async (userId, email) => {
-    console.log(userId, email);
+createUserObj = async (userId, email, name, location) => {
+    console.log(userId, email, name, location);
     try {
-        firebase.firestore().collection("users").doc(userId).set({
-            name: 'Enter Name',
+        await firebase.firestore().collection("users").doc(userId).set({
+            name,
             avatar: '',
             email,
+            location
         });
+        window.location.href = "index.html";
     } catch ({
         message
     }) {
@@ -18,15 +20,18 @@ signup = async () => {
     console.log("something");
     var email = document.getElementById("inputEmail4").value;
     var pass = document.getElementById("inputPassword4").value;
+    var name = document.getElementById("inputName").value;
+    var location = document.getElementById("inputLocation").value;
 
     try {
 
         await firebase
             .auth()
             .createUserWithEmailAndPassword(email, pass)
-            .then(userObj => createUserObj(userObj.user.uid, email))
+            .then(userObj => {
+                createUserObj(userObj.user.uid, email, name, location);
+            })
             .catch(error => alert("line 27" + error));
-            window.location.href = "index.html";
     } catch (error) {
         alert("line 30" + error);
     }
