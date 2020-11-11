@@ -50,55 +50,7 @@
     <div class="input-group col-md-12">
       <input id="search" type="text" class="form-control input-lg" placeholder="Search" />
     </div>
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-        <div class="image-parent">
-          <img src="https://dummyimage.com/80x80/000/fff" class="img-fluid" alt="thumbnail">
-        </div>
-        <div class="flex-grow-1">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small>3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </p>
-          <div class="d-flex text-warning"><i class="far fa-star"></i><i class="far fa-star"></i><i
-              class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-        <div class="image-parent">
-          <img src="https://dummyimage.com/80x80/000/fff" class="img-fluid" alt="thumbnail">
-        </div>
-        <div class="flex-grow-1">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small class="text-muted">3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </p>
-          <div class="d-flex text-warning"><i class="far fa-star"></i><i class="far fa-star"></i><i
-              class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-        <div class="image-parent">
-          <img src="https://dummyimage.com/80x80/000/fff" class="img-fluid" alt="thumbnail">
-        </div>
-        <div class="flex-grow-1">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small class="text-muted">3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-          </p>
-          <div class="d-flex text-warning"><i class="far fa-star"></i><i class="far fa-star"></i><i
-              class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </a>
+    <div class="list-group" id="attractions-list">
     </div>
   </div>
 
@@ -114,13 +66,22 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+    
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
   <!-- Your own Firebase API key information -->
   <script src="scripts/app.js"> </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  <script src="scripts/index.js"> </script>
 
 </body>
 
