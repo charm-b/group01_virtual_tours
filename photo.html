@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/d847cbed4d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/style.css">
-  <title>Document</title>
+  <title>Group 1 Virtual Tour</title>
 </head>
 
 <body>
@@ -33,90 +33,10 @@
       </ul>
     </div>
   </nav>
-  <section id="photoSection">
-    <h1 id="photoTitle">Photo gallery</h1>
-    <div id="photoMainGrid">
-      <div id="photoContainer1" class="mainContainer">
-        <div id="photoContainer01" class="photoSubContainer">
-          <img id="viewImage01" class="viewImage" src="images/viewPhoto01.png" alt="view">
-          <div id="photoIconSection01" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-        <div id="photoContainer02" class="photoSubContainer">
-          <img id="viewImage02" class="viewImage" src="images/viewPhoto02.png" alt="view">
-          <div id="photoIconSection02" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-        <div id="photoContainer03" class="photoSubContainer">
-          <img id="viewImage03" class="viewImage" src="images/viewPhoto03.png" alt="view">
-          <div id="photoIconSection03" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-      </div>
-      <div id="container2" class="mainContainer">
-        <div id="photoContainer04" class="photoSubContainer">
-          <img id="viewImage04" class="viewImage" src="images/viewPhoto04.png" alt="view">
-          <div id="photoIconSection04" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-        <div id="photoContainer05" class="photoSubContainer">
-          <img id="viewImage05" class="viewImage" src="images/viewPhoto05.png" alt="view">
-          <div id="photoIconSection05" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-        <div id="photoContainer06" class="photoSubContainer">
-          <img id="viewImage06" class="viewImage" src="images/viewPhoto06.png" alt="view">
-          <div id="photoIconSection06" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-      </div>
-      <div id="container3" class="mainContainer">
-        <div id="photoContainer07" class="photoSubContainer">
-          <img id="viewImage07" class="viewImage" src="images/viewPhoto07.png" alt="view">
-          <div id="photoIconSection07" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-        <div id="photoContainer08" class="photoSubContainer">
-          <img id="viewImage08" class="viewImage" src="images/viewPhoto08.png" alt="view">
-          <div id="photoIconSection08" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-        <div id="photoContainer09" class="photoSubContainer">
-          <img id="viewImage09" class="viewImage" src="images/viewPhoto09.png" alt="view">
-          <div id="photoIconSection09" class="photoIconSection">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-comment"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h1 id="photoTitle">Photo Gallery</h1>
+    <div id="photoFromDatabase" class="mainContainer">
 
-    <div id="photoFromDatabase">
     </div>
   </section>
     <!-- Firebase libraries from CDN -->
@@ -127,7 +47,7 @@
   
     <!-- Your own Firebase API key information -->
     <script src="scripts/app.js"> </script>
-    <script src="scripts/photo.js"> </script>
+    <script src="scripts/photo.js" type="module"> </script>
 </body>
 
 </html>
