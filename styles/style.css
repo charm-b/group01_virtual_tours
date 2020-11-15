@@ -5,7 +5,7 @@ body{
 .image-parent {
   margin-right: 1%;
 }
-/* Sign in page*/
+/* Sign up page*/
 #signupTitle{
   margin-top: 5%;
   margin-left: 10%;
@@ -31,7 +31,7 @@ body{
   height: 300px;
 }
 .photoSubContainer{
-  background-color: #C4C2C2;
+  background-color: #EFE0E8;
   width: 300px;
   height: 340px;
 }
