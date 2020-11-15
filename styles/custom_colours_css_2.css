@@ -1,0 +1,11 @@
+.btn-info {
+    color: #F6C5E1;
+    background-color: #674DF6;
+    border-color: #674DF6;
+  }
+.bg-dark {
+    background-color: #E08087 !important;
+}
+.navbar-dark .navbar-brand {
+    color: #F6C5E1;
+  }
