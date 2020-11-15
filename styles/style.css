@@ -1,6 +1,9 @@
 body{
   font-size: 15px;
 }
+#signupBody{
+  padding: 0 10%;
+}
 /* Index page */
 .image-parent {
   margin-right: 1%;
