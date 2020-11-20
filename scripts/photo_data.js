@@ -1,4 +1,5 @@
-const getDateFromTimeStamp = ({ seconds }) => new Date(seconds);
+const getDateFromTimeStamp = (ticks) => (new Date(parseInt(ticks, 10))).toLocaleDateString();
+
 
 const getDocWithId = (docs) => {
   const data = docs.map(doc => {
@@ -41,6 +42,28 @@ const getPhotoDataWithComments = () => new Promise((resolve, reject) => {
   // });
 });
 
+const addNewPhotoWithComments = async ({uid, imageUrl, comment, timestamp}) => {
+  db.collection("photo").doc(uid).set({
+    uid,
+    imageUrl,
+  })
+  .then(() => {
+    db.collection("photo")
+      .doc(uid)
+        .collection("comments")
+        .doc(uid)
+        .set({
+      comment,
+      timestamp
+    });
+  }).then(() => {})
+  .catch(function(err){
+    console.log(err);
+  });
+};
+
+
+
 export {
-  getDateFromTimeStamp, loadCommentData, getPhotoData, getPhotoDataWithComments
+  getDateFromTimeStamp, loadCommentData, getPhotoData, getPhotoDataWithComments, addNewPhotoWithComments
 };

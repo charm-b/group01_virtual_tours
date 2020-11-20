@@ -11,7 +11,6 @@ body{
 /* Sign up page*/
 #signupTitle{
   margin-top: 5%;
-  margin-left: 10%;
 }
 #signupForm{
   padding: 2% 10%;
@@ -42,6 +41,28 @@ body{
   padding-top: 1%;
   padding-left: 1%;
 }
+/*
+photoUpload.html
+*/
+#photoUploadContainer{
+  padding: 5% 10% 0 10%;
+}
+#uploadPhotoTitle{
+  margin-bottom: 2%;
+}
+
+#photoSubmitButton {
+  pointer-events: none;
+}
+
+.auth-user #photoSubmitButton {
+  pointer-events: all;
+}
+
+#addPhoto{
+  margin-left: 7%;
+}
+
 @media only screen and (max-width: 1000px){
   .viewImage{
     width: 270px;

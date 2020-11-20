@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/d847cbed4d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/custom_colours_css.css">
+  <title>Group 1 Virtual Tour</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="">Virtour</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Attractions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="favourites_page.html">Favourites</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section id="photoUploadContainer">
+    <h1 id="uploadPhotoTitle">Upload a Photo</h1>
+    <div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Choose a photo</label>
+        <div>
+          <input type="file" id="file-input" placeholder="example.jpg"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Add comments</label>
+        <textarea class="form-control" id="photoComment" rows="3"></textarea>
+      </div>
+      <button id="photoSubmitButton" type="button" class="btn btn-info">Submit</button>
+    </div>
+    
+  </section>
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/app.js"> </script>
+  <script src="scripts/photo.js" type="module"> </script>
+</body>
+
+</html>
