@@ -1,9 +1,13 @@
 const attractionsCollectionName = 'attractions';
 
 // Download Data
-var getAttractions = async () => {
+var getAttractions = async ({ currentQuery }) => {
   let ref = this.attractionsCollection().orderBy('name', 'asc');
   try {
+    if (currentQuery) {
+      ref = ref.where('name', '>=', currentQuery).where('name', '<=', currentQuery+'\uf8ff');
+    }
+    
     const querySnapshot = await ref.get();
     const data = [];
     querySnapshot.forEach(function(doc) {
@@ -44,6 +48,7 @@ var getAttraction = async attractionId => {
 
 // Append the item to our list group
 var addAttractions = attractions => {
+  $("#attractions-list").empty();
   Object.keys(attractions).forEach(function (key) {
     var a = $("<a href='#' class='list-group-item list-group-item-action d-flex justify-content-between align-items-center'>");
     var d1 = $("<div class='image-parent'>");
@@ -62,9 +67,9 @@ var addAttractions = attractions => {
 };
 
 // Call our database and ask for the attractions
-var makeRemoteRequest = async () => {
+var makeRemoteRequest = async ({ currentQuery }) => {
   // The data will be an array of attractions.
-  const data = await getAttractions();
+  const data = await getAttractions({ currentQuery });
 
   // Iteratively add attractions
   let attractions = {};
@@ -80,5 +85,13 @@ function attractionsCollection() {
 }
 
 $(document).ready(async function() {
-  makeRemoteRequest();
+  makeRemoteRequest({});
+	$('#search').keyup(function(){	
+		var currentQuery = $('#search').val();
+		if (currentQuery !== "") {
+      makeRemoteRequest({ currentQuery });
+		} else {
+      makeRemoteRequest({});
+		};
+	});
 });
