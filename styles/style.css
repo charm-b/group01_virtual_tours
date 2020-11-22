@@ -1,52 +1,119 @@
 body{
   font-size: 15px;
 }
+
+li{
+  list-style: none;
+}
+
+ul{
+  padding-inline-start: 0;
+}
+
+.timestamp{
+  font-size: 0.6em;
+}
+
 #signupBody{
   padding: 0 10%;
 }
+
 /* Index page */
 .image-parent {
   margin-right: 1%;
 }
+
 /* Sign up page*/
 #signupTitle{
   margin-top: 5%;
 }
+
 #signupForm{
   padding: 2% 10%;
 }
-/* Photo page */
+
+/* Photo gallery page */
+
+/*
+show all comments when clicked button
+*/
+
+.comments ul li {
+  display: none;
+}
+
+.comments ul li:first-child{
+  display: block;
+}
+
+.showAll .comments .commentUl li{
+  display: block;
+}
+
+.showAllComments::after{
+  content: 'more comments...';
+}
+
+.showAll .showAllComments::after{
+  content: 'less comments';
+}
+
+.showAllComments{
+  font-size: 0.8em;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.btn-info.showAllComments{
+  color: black;
+  background-color: transparent;
+}
+
+.replyButton{
+  margin-top: 8px;
+}
+
 #photoTitle{
   text-align: center;
   margin-top: 5%;
   font-size: 3em;
   text-transform: uppercase;
 }
+
 .mainContainer{
   display: grid;
   grid-template-columns: 30% 30% auto;
   justify-content: center;
   margin-top: 5%;
 }
+
 .viewImage{
   width: 300px;
   height: 300px;
 }
+
 .photoSubContainer{
   background-color: #EFE0E8;
   width: 300px;
-  height: 340px;
+  margin-bottom: 55%;
 }
+
 .photoIconSection{
   padding-top: 1%;
   padding-left: 1%;
 }
+
+.changeColor{
+  color: red;
+}
+
 /*
 photoUpload.html
 */
 #photoUploadContainer{
   padding: 5% 10% 0 10%;
 }
+
 #uploadPhotoTitle{
   margin-bottom: 2%;
 }
@@ -63,28 +130,34 @@ photoUpload.html
   margin-left: 7%;
 }
 
+
 @media only screen and (max-width: 1000px){
   .viewImage{
     width: 270px;
     height: 270px;
   }
+
   .photoSubContainer{
     width: 270px;
     height: 300px;
   }
+
 }
 @media only screen and (max-width: 950px){
   .mainContainer{
     display: block;
   }
+
   .photoSubContainer{
     margin: 0 auto;
     margin-bottom: 10%;
   }
+
   .viewImage{
     width: 400px;
     height: 400px;
   }
+  
   .photoSubContainer{
     width: 400px;
     height: 450px;
