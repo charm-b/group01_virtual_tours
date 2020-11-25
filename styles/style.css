@@ -23,6 +23,13 @@ ul{
   margin-right: 1%;
 }
 
+.img-fluid {
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 80px;
+  width: 80px;
+}
+
 /* Sign up page*/
 #signupTitle{
   margin-top: 5%;
