@@ -50,7 +50,7 @@ var getAttraction = async attractionId => {
 var addAttractions = attractions => {
   $("#attractions-list").empty();
   Object.keys(attractions).forEach(function (key) {
-    var a = $("<a href='#' class='list-group-item list-group-item-action d-flex justify-content-between align-items-center'>");
+    var a = $("<a href='attractionDetail.html?id=" + key + "' class='list-group-item list-group-item-action d-flex justify-content-between align-items-center'>");
     var d1 = $("<div class='image-parent'>");
     d1.append("<img src='" + attractions[key].imageUrl + "' class='img-fluid' alt='thumbnail'>");
     var d2 = $("<div class='flex-grow-1'>");
