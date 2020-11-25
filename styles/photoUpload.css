@@ -1,0 +1,22 @@
+/*
+photoUpload.html
+*/
+#photoUploadContainer{
+  padding: 5% 10% 0 10%;
+}
+
+#uploadPhotoTitle{
+  margin-bottom: 2%;
+}
+
+#photoSubmitButton {
+  pointer-events: none;
+}
+
+.auth-user #photoSubmitButton {
+  pointer-events: all;
+}
+
+#addPhoto{
+  margin-left: 7%;
+}

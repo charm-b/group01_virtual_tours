@@ -1,11 +1,4 @@
-body{
-  font-size: 15px;
-}
-
-li{
-  list-style: none;
-}
-
+/* Photo gallery page */
 ul{
   padding-inline-start: 0;
 }
@@ -13,30 +6,6 @@ ul{
 .timestamp{
   font-size: 0.6em;
 }
-
-#signupBody{
-  padding: 0 10%;
-}
-
-/* Index page */
-.image-parent {
-  margin-right: 1%;
-}
-
-/* Sign up page*/
-#signupTitle{
-  margin-top: 5%;
-}
-
-#signupForm{
-  padding: 2% 10%;
-}
-
-/* Photo gallery page */
-
-/*
-show all comments when clicked button
-*/
 
 .comments ul li {
   display: none;
@@ -107,30 +76,6 @@ show all comments when clicked button
   color: red;
 }
 
-/*
-photoUpload.html
-*/
-#photoUploadContainer{
-  padding: 5% 10% 0 10%;
-}
-
-#uploadPhotoTitle{
-  margin-bottom: 2%;
-}
-
-#photoSubmitButton {
-  pointer-events: none;
-}
-
-.auth-user #photoSubmitButton {
-  pointer-events: all;
-}
-
-#addPhoto{
-  margin-left: 7%;
-}
-
-
 @media only screen and (max-width: 1200px){
   .viewImage{
     width: 250px;
@@ -143,13 +88,17 @@ photoUpload.html
 }
 
 @media only screen and (max-width: 1000px){
+  #addPhoto {
+    margin-left: 21%;
+  }
+
   .mainContainer{
     display: block;
   }
 
   .photoSubContainer{
     margin: 0 auto;
-    margin-bottom: 1%;
+    margin-bottom: 15%;
   }
 
   .viewImage{
@@ -159,6 +108,5 @@ photoUpload.html
   
   .photoSubContainer{
     width: 400px;
-    height: 450px;
   }
 }
