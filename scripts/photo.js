@@ -5,9 +5,6 @@ const DOMEvents = {
   Click: 'click'
 };
 
-//need this method for the id starts from 0 otherwise error
-const getSafeId = (id) => `id_${id}`;
-
 const commentTemplate = ({
   comment,
   timestamp = ''
@@ -30,7 +27,7 @@ const photoTemplate = ({
     </div>
   `;
 
-  const replyCommentsForm = (id) =>
+const replyCommentsForm = (id) =>
   `
   <div class="form-group">
     <textarea class="form-control replyComment" rows="3" placeholder="add comments"  data-id="${id}"></textarea>
@@ -38,15 +35,17 @@ const photoTemplate = ({
   </div>
   `;
 
-  const loadPhotoLikes = async (userID) => {
-    const {likes =[]} = await Data.loadLikes(userID);
-    likes.forEach(l => {
-      const selector = `.fa-heart[data-id="${l}"]`;
-      console.log(`setting like for ${selector}`);
-      const heart = document.querySelector(selector);
-      if(heart) heart.classList.add('changeColor');
-    });
-  };
+const loadPhotoLikes = async (userID) => {
+  const {
+    likes = []
+  } = await Data.loadLikes(userID);
+  likes.forEach(l => {
+    const selector = `.fa-heart[data-id="${l}"]`;
+    console.log(`setting like for ${selector}`);
+    const heart = document.querySelector(selector);
+    if (heart) heart.classList.add('changeColor');
+  });
+};
 
 // display in HTML
 const loadCommentUI = (photoID) => {
@@ -55,10 +54,10 @@ const loadCommentUI = (photoID) => {
   Data.loadCommentData(photoID)
     .then(data => {
       const html = data
-        .sort( (a, b) => a.timestamp - b.timestamp)
+        .sort((a, b) => a.timestamp - b.timestamp)
         .map(doc => commentTemplate(doc))
         .join('');
-        document.querySelector(`div.photoSubContainer[data-id="${photoID}"] .comments`)
+      document.querySelector(`div.photoSubContainer[data-id="${photoID}"] .comments`)
         .innerHTML = `<ul class="commentUl" data-id="${photoID}">${html}</ul>`;
     });
 };
@@ -68,7 +67,7 @@ const loadUIPhoto = (dataMethod = Data.getPhotoData) => {
   dataMethod()
     .then(data => {
       document.querySelector('#photoFromDatabase').innerHTML = data.map(doc => photoTemplate(doc))
-      .join('');
+        .join('');
       try {
         data.forEach(({
           id
@@ -109,9 +108,9 @@ var uploadMediaAsync = async uri => {
   return uploadMedia(uri, path);
 };
 
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    // Enable Upload COntrol (if it exists)
+    // Enable Upload Control (if it exists)
     document.body.classList.add('auth-user');
   } else {
     // Disable
@@ -132,66 +131,78 @@ function getFileExtension(uri) {
 
 // adding to firebase, uploading file, and adding comments
 const photoUpload = async () => {
-    const fileInput = document.querySelector('#file-input');
-    if (fileInput.value === '') return;
-    const uri = URL.createObjectURL(fileInput.files[0]); 
-    if (uri !== '') {
-      const imageUrl = await uploadMediaAsync(uri);
-      const comment = document.querySelector('#photoComment').value;
-      const timestamp = Date.now();
-      const container = document.querySelector('.container');
-      Data.addNewPhotoWithComments({
-        uid: uid(),
-        imageUrl,
-        comment,
-        timestamp
-      }).then(() => {
-        container.style.display = 'none';
-        Data.sucessMessage();
-      }).catch((err) => {
-        container.style.display = 'none';
-        Data.failMessage(err);
-      });
-    }
+  const fileInput = document.querySelector('#file-input');
+  if (fileInput.value === '') return;
+  const uri = URL.createObjectURL(fileInput.files[0]);
+  if (uri !== '') {
+    const imageUrl = await uploadMediaAsync(uri);
+    const comment = document.querySelector('#photoComment').value;
+    const timestamp = Date.now();
+    const container = document.querySelector('.container');
+    Data.addNewPhotoWithComments({
+      uid: uid(),
+      imageUrl,
+      comment,
+      timestamp
+    }).then(() => {
+      container.style.display = 'none';
+      Data.sucessMessage();
+    }).catch((err) => {
+      container.style.display = 'none';
+      Data.failMessage(err);
+    });
+  }
 };
 
 // add comments to existing photo
-const addComment = ({ dataset : {id} }) => {
+const addComment = ({
+  dataset: {
+    id
+  }
+}) => {
   const comment = document.querySelector(`textarea.replyComment[data-id="${id}"]`).value;
-  if(comment !== ''){
+  if (comment !== '') {
     Data.addComment({
       id,
       comment,
-      timestamp: Date.now() 
+      timestamp: Date.now()
     });
   }
   loadUIPhoto();
 };
 
-const toggleCommentShow = ({dataset: { id }}) => {
+const toggleCommentShow = ({
+  dataset: {
+    id
+  }
+}) => {
   document.querySelector(`div.photoSubContainer[data-id="${id}"]`).classList.toggle('showAll');
 };
 
 // like button
-const likePhoto = ({dataset: {id}}) => {
+const likePhoto = ({
+  dataset: {
+    id
+  }
+}) => {
   const heart = document.querySelector(`.fa-heart[data-id="${id}"]`);
   heart.classList.toggle('changeColor');
   const likeData = {
     photoID: id,
     userID: uid()
   };
-  if(heart.classList.contains('changeColor')){
+  if (heart.classList.contains('changeColor')) {
     Data.likePhoto(likeData);
-  }else{
+  } else {
     Data.disLikePhoto(likeData);
   };
 };
 
-const processClick = (target) =>{
-  if(target.matches('.replyButton')) addComment(target);
-  if(target.matches('#photoSubmitButton')) photoUpload();
-  if(target.matches('.showAllComments')) toggleCommentShow(target);
-  if(target.matches('.fa-heart')) likePhoto(target);
+const processClick = (target) => {
+  if (target.matches('.replyButton')) addComment(target);
+  if (target.matches('#photoSubmitButton')) photoUpload();
+  if (target.matches('.showAllComments')) toggleCommentShow(target);
+  if (target.matches('.fa-heart')) likePhoto(target);
 };
 
 // DOM ready call the functions
@@ -200,6 +211,7 @@ document.addEventListener(DOMEvents.PageLoaded, () => {
   const photoUploadInput = document.querySelector('#file-input');
   if (photoContainer) loadUIPhoto();
   if (photoUploadInput) photoUpload();
-  document.addEventListener('click', ({target}) => processClick(target))
+  document.addEventListener('click', ({
+    target
+  }) => processClick(target))
 });
-
