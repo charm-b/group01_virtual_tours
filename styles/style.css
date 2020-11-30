@@ -19,6 +19,14 @@ ul{
 }
 
 /* Index page */
+
+/* hide the blue outline */
+.form-control:focus {
+  outline: 0 !important;
+  border-color: #9FA0E8;
+  box-shadow: none;
+}
+
 .image-parent {
   margin-right: 1%;
 }
@@ -30,6 +38,15 @@ ul{
   width: 80px;
 }
 
+.input-group {
+  margin-bottom: 3px;
+}
+
+.input-group-text {
+  background-color: #FDF9FF !important;
+  color: gray !important;
+}
+
 #custom-search-input {
   padding: 3px;
   background-color: #fff;
@@ -37,7 +54,6 @@ ul{
 
 #custom-search-input input {
   box-shadow: none;
-  margin-bottom: 3px;
 }
 
 /* Sign up page*/
