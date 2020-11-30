@@ -30,6 +30,16 @@ ul{
   width: 80px;
 }
 
+#custom-search-input {
+  padding: 3px;
+  background-color: #fff;
+}
+
+#custom-search-input input {
+  box-shadow: none;
+  margin-bottom: 3px;
+}
+
 /* Sign up page*/
 #signupTitle{
   margin-top: 5%;
