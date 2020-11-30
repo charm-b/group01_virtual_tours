@@ -1,5 +1,12 @@
 const attractionsCollectionName = 'attractions';
 
+const ptr = PullToRefresh.init({
+  mainElement: '#custom-search-input',
+  onRefresh() {
+    window.location.reload();
+  }
+});
+
 // Download Data
 var getAttractions = async ({ currentQuery }) => {
   let ref = this.attractionsCollection().orderBy('name', 'asc');
