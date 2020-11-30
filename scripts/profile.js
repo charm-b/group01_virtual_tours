@@ -31,6 +31,21 @@ firebase.auth().onAuthStateChanged(function (user) {
             var locationAndLinks = document.getElementById("locationAndLinks");
             locationAndLinks.innerText = ("Location: " + userInfo.location + " Email: " + userInfo.email);
         });
+        var photoRef = firebase.firestore().collection("photo");
+        photoRef.where("uid", "==", uid())
+            .get()
+            .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    console.log(doc.data());
+                    var newPhoto = $("#imageBox");
+                    var theUrl = doc.data().imageUrl;
+                    newPhoto.append("<div class='img4'> <figure> <img src='" + theUrl + "' class='figure-img img-fluid rounded' alt='img'></figure></div>")
+
+                });
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
     } else {
         // No user is signed in.
     }

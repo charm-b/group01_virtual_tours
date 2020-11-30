@@ -43,15 +43,17 @@ const getPhotoDataWithComments = () => new Promise((resolve, reject) => {
 });
 
 const addNewPhotoWithComments = async ({uid, imageUrl, comment, timestamp}) => {
-  db.collection("photo").doc(uid).set({
-    uid,
+  const ref = db.collection("photo").doc();
+  const id = ref.id;
+  ref.set({
     imageUrl,
+    uid
   })
   .then(() => {
     db.collection("photo")
-      .doc(uid)
+      .doc(id)
         .collection("comments")
-        .doc(uid)
+        .doc()
         .set({
       comment,
       timestamp
