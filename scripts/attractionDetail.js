@@ -31,7 +31,9 @@ var makeRemoteRequest = async (attractionId) => {
   
   $("#attraction-image").attr("src", data.imageUrl);
   $("#attraction-name").text(data.name);
+  $("#last-updated").text(moment(data.lastUpdated.toDate()).fromNow());
   $("#description").text(data.description);
+  $("#tour-now").attr("href", data.contentUrl);
   
   setTimeout(function() {
     $("#loadMe").modal("hide");

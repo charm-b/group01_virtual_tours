@@ -58,21 +58,29 @@
     </div>
   </nav>
   
-  <div class="container">
-    <img id="attraction-image" class="w-100" src="about:blank" alt="" />
-    
-    <h1 id='attraction-name'>Attraction Name</h1>
-    <div class='d-flex text-warning'>
-      <i class='far fa-star'></i>
-      <i class='far fa-star'></i>
-      <i class='far fa-star'></i>
-      <i class='far fa-star'></i>
-      <i class='far fa-star'></i>
+  <div class="container-fluid px-0">
+    <div class="image-wrap">
+      <img id="attraction-image" class="w-100" src="about:blank" alt="" />
     </div>
-    <p id='description'>Description</p>
+    
+    <div class="container">
+      <h1 id='attraction-name'>Attraction Name</h1>
+      <div class="d-flex text-secondary">
+        <div class='d-flex text-warning'>
+          <i class='far fa-star'></i>
+          <i class='far fa-star'></i>
+          <i class='far fa-star'></i>
+          <i class='far fa-star'></i>
+          <i class='far fa-star'></i>
+        </div>
+        &nbsp;·&nbsp;
+        <p id="last-updated">Last Updated</p>
+      </div>
+      <p id='description'>Description</p>
   
-    <button type="button" class="btn btn-primary btn-lg btn-block">Tour Now</button>
-    <button id="addToFav" type="button" class="btn btn-secondary btn-lg btn-block">Add to Favourites</button>
+      <a href="#" target="_blank" id="tour-now" class="btn btn-primary btn-lg btn-block"><i class="fas fa-door-open"></i> Tour Now</a>
+      <a href="#" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-plus"></i> Add to Favourites</a>
+    </div>
   </div>
   
   <!-- Modal -->
