@@ -13,7 +13,9 @@ var getAttraction = async attractionId => {
       };
       return reduced;
     }
-  } catch ({ message }) {
+  } catch ({
+    message
+  }) {
     alert(message);
   }
 };
@@ -25,17 +27,17 @@ var makeRemoteRequest = async (attractionId) => {
     keyboard: false,
     show: true
   });
-  
+
   // The data will be an attraction.
   const data = await getAttraction(attractionId);
-  
+
   $("#attraction-image").attr("src", data.imageUrl);
   $("#attraction-name").text(data.name);
   $("#last-updated").text(moment(data.lastUpdated.toDate()).fromNow());
   $("#description").text(data.description);
   $("#tour-now").attr("href", data.contentUrl);
-  
-  setTimeout(function() {
+
+  setTimeout(function () {
     $("#loadMe").modal("hide");
   }, 500);
 };
@@ -45,11 +47,45 @@ function attractionsCollection() {
   return firebase.firestore().collection(attractionsCollectionName);
 }
 
-$(document).ready(async function() {
+const addToFavourites = async (
+  uid,
+  attractionID
+) => {
+  console.log(uid, attractionID);
+  const dataSet = await db.collection('users')
+    .doc(uid)
+    .get();
+  const {
+    favourites = []
+  } = dataSet.data() || {};
+  favourites.push(attractionID);
+  const uniqueFavourites = [...new Set(favourites)];
+
+  await db.collection('users')
+    .doc(uid)
+    .update({
+      favourites: uniqueFavourites
+    });
+};
+
+function uid() {
+  return (firebase.auth().currentUser || {}).uid;
+}
+
+var favouritesPressed = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const attractionId = urlParams.get('id');
+  addToFavourites(uid(), attractionId)
+  alert("Added to Favourites!");
+}
+
+$(document).ready(async function () {
   const urlParams = new URLSearchParams(window.location.search);
   const attractionId = urlParams.get('id');
   makeRemoteRequest(attractionId);
-  $('#back-button').on('click', function(e) {
+  $('#back-button').on('click', function (e) {
     window.history.back();
   });
+  var button = document.getElementById("addToFav");
+  button.addEventListener("click", favouritesPressed);
 });

@@ -6,7 +6,7 @@ createUserObj = async (userId, email, name, location) => {
             avatar: '',
             email,
             location,
-            favourites
+            favourites:[]
         });
         window.location.href = "index.html";
     } catch ({
