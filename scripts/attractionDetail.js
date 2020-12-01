@@ -47,4 +47,7 @@ $(document).ready(async function() {
   const urlParams = new URLSearchParams(window.location.search);
   const attractionId = urlParams.get('id');
   makeRemoteRequest(attractionId);
+  $('#back-button').on('click', function(e) {
+    window.history.back();
+  });
 });
