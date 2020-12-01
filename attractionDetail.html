@@ -25,7 +25,12 @@
   <!-------------------------------------->
   <!-- Header Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Virtour</a>
+    <div>
+      <button type="button" id="back-button" class="navbar-left navbar-toggler">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <a class="navbar-brand" href="index.html">Virtour</a>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -68,6 +73,17 @@
   
     <button type="button" class="btn btn-primary btn-lg btn-block">Tour Now</button>
     <button type="button" class="btn btn-secondary btn-lg btn-block">Add to Favourites</button>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
   </div>
   
   <!----------------------------------------------->

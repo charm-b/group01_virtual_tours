@@ -20,6 +20,12 @@ var getAttraction = async attractionId => {
 
 // Call our database and ask for the attraction
 var makeRemoteRequest = async (attractionId) => {
+  $("#loadMe").modal({
+    backdrop: "static",
+    keyboard: false,
+    show: true
+  });
+  
   // The data will be an attraction.
   const data = await getAttraction(attractionId);
   
@@ -27,7 +33,9 @@ var makeRemoteRequest = async (attractionId) => {
   $("#attraction-name").text(data.name);
   $("#description").text(data.description);
   
-  console.log(data);
+  setTimeout(function() {
+    $("#loadMe").modal("hide");
+  }, 500);
 };
 
 // Helpers
@@ -39,4 +47,7 @@ $(document).ready(async function() {
   const urlParams = new URLSearchParams(window.location.search);
   const attractionId = urlParams.get('id');
   makeRemoteRequest(attractionId);
+  $('#back-button').on('click', function(e) {
+    window.history.back();
+  });
 });

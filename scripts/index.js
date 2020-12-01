@@ -1,5 +1,12 @@
 const attractionsCollectionName = 'attractions';
 
+const ptr = PullToRefresh.init({
+  mainElement: '#custom-search-input',
+  onRefresh() {
+    window.location.reload();
+  }
+});
+
 // Download Data
 var getAttractions = async ({ currentQuery }) => {
   let ref = this.attractionsCollection().orderBy('name', 'asc');
@@ -68,6 +75,12 @@ var addAttractions = attractions => {
 
 // Call our database and ask for the attractions
 var makeRemoteRequest = async ({ currentQuery }) => {
+  $("#loadMe").modal({
+    backdrop: "static",
+    keyboard: false,
+    show: true
+  });
+  
   // The data will be an array of attractions.
   const data = await getAttractions({ currentQuery });
 
@@ -77,6 +90,10 @@ var makeRemoteRequest = async ({ currentQuery }) => {
     attractions[child.key] = child;
   }
   this.addAttractions(attractions);
+  
+  setTimeout(function() {
+    $("#loadMe").modal("hide");
+  }, 500);
 };
 
 // Helpers

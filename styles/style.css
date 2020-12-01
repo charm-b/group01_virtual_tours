@@ -19,6 +19,14 @@ ul{
 }
 
 /* Index page */
+
+/* hide the blue outline */
+.form-control:focus {
+  outline: 0 !important;
+  border-color: #9FA0E8;
+  box-shadow: none;
+}
+
 .image-parent {
   margin-right: 1%;
 }
@@ -28,6 +36,65 @@ ul{
   object-position: center; /* Center the image within the element */
   height: 80px;
   width: 80px;
+}
+
+.input-group {
+  margin-bottom: 3px;
+}
+
+.input-group-text {
+  background-color: #FDF9FF !important;
+  color: gray !important;
+}
+
+#custom-search-input {
+  padding: 3px;
+  background-color: #fff;
+}
+
+#custom-search-input input {
+  box-shadow: none;
+}
+
+/** SPINNER CREATION **/
+
+.loader {
+  position: relative;
+  text-align: center;
+  margin: 15px auto 35px auto;
+  z-index: 9999;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border: 10px solid rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+/** MODAL STYLING **/
+
+.modal-content {
+  border-radius: 0px;
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.7);
+}
+
+.modal-backdrop.show {
+  opacity: 0.75;
 }
 
 /* Sign up page*/
