@@ -2,192 +2,112 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Group 1 Virtual Tour</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8">
+  <title>Group 1 Virtual Tour</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
 
-    <!-- Bootstrap for Mobile-first, and JQuery -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="styles/profile_css.css">
-    <!-- <link rel="stylesheet" href="styles/style.css"> -->
-    <link rel="stylesheet" href="styles/custom_colours_css.css">
+  <!-- Optional styles and scripts of your own -->
+  <script src="https://kit.fontawesome.com/d847cbed4d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/profile_css.css">
+  <!-- <link rel="stylesheet" href="styles/style.css"> -->
+  <link rel="stylesheet" href="styles/custom_colours_css.css">
 
 </head>
 
 <body>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Virtour</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Attractions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="photo.html">Photos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign Up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="favourites_page.html">Favourites</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="photoUpload.html">Upload</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
+  <!-- Header Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Virtour</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fas fa-landmark"></i> Attractions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="photo.html"><i class="fas fa-images"></i> Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="favourites_page.html"><i class="fas fa-heart"></i> Favourites</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <div class="wrapper">
+  <div class="wrapper">
 
-        <div class="profilePic">
-            <figure class="pfp">
-                <img src="https://i.pinimg.com/originals/5a/3d/11/5a3d1159868a599b9bcb8f593c3fc9c2.png"
-                    class="figure-img img-fluid rounded" alt="pfp">
-            </figure>
-        </div>
-
-        <div class="name">
-            <h3 id="profileName">John Doe</h3>
-        </div>
-
-        <div class="about-me">
-            <p id="locationAndLinks">Location and Links</p>
-            <p>[insert bio here]</p>
-        </div>
-
-        <div class="button1">
-            <button type="button" id="follow" class="btn btn-primary">Follow</button>
-        </div>
-
-        <div class="button2">
-            <button type="button" id="message" class="btn btn-info">Message</button>
-        </div>
-
-        <div id="imageBox" class=images>
-
-            <div class="img4">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/4f/07/5b/4f075b7e9666db078865e969e46a405b.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img3">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/ca/8f/39/ca8f39f001940f627fe988873f581478.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img2">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/96/11/8b/96118b544e76f34551cf73bf85638823.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img4">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/4f/07/5b/4f075b7e9666db078865e969e46a405b.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img3">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/ca/8f/39/ca8f39f001940f627fe988873f581478.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img2">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/96/11/8b/96118b544e76f34551cf73bf85638823.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img2">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/96/11/8b/96118b544e76f34551cf73bf85638823.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img4">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/4f/07/5b/4f075b7e9666db078865e969e46a405b.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img3">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/ca/8f/39/ca8f39f001940f627fe988873f581478.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-            <div class="img2">
-                <figure>
-                    <img src="https://i.pinimg.com/originals/96/11/8b/96118b544e76f34551cf73bf85638823.jpg"
-                        class="figure-img img-fluid rounded" alt="pfp">
-                </figure>
-            </div>
-
-        </div>
-
-
-
-        <div class="categories">
-            <p>Photos (10)</p>
-            <p>Liked (30)</p>
-            <p>Recent Tours</p>
-        </div>
+    <div class="profilePic">
+      <figure class="pfp">
+        <img
+          src="https://www.marinasmediterraneo.com/marinaseste/wp-content/uploads/sites/4/2018/09/generic-user-purple-4.png"
+          class="figure-img img-fluid rounded" alt="pfp">
+      </figure>
     </div>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+    <div class="name">
+      <h3 id="profileName">John Doe</h3>
+    </div>
 
-    <!-- Firebase libraries from CDN -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <div class="about-me">
+      <p id="locationAndLinks">Location and Links</p>
+    </div>
 
-    <!-- Your own Firebase API key information -->
-    <script src="scripts/app.js"> </script>
-    <script src="scripts/profile.js"> </script>
+    <div class="button1">
+      <a href="photoUpload.html" id="follow" class="btn btn-primary">Upload Photo</a>
+    </div>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+    <div id="imageBox" class="images">
+
+    </div>
+
+  </div>
+
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/app.js"> </script>
+  <script src="scripts/profile.js"> </script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
 
 </body>
 
